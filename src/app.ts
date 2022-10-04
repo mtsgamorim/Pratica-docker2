@@ -13,10 +13,10 @@ app.post("/students", async (req: Request, res: Response) => {
   const { students } = req.body;
   await prisma.student.createMany({
     data: students,
-    skipDuplicates: true
+    skipDuplicates: true,
   });
 
-  res.sendStatus(201); // created
+  res.sendStatus(201); // created ff
 });
 
 app.get("/students/random", async (req: Request, res: Response) => {
